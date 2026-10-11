@@ -1,0 +1,9 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "kara-tahta",
+  "main": "worker/index.ts",
+  "compatibility_date": "2026-10-09",
+  "assets": {
+    "not_found_handling": "none"
+  }
+}

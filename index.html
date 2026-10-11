@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>kara-tahta</title>
+    <style>
+      html, body { margin: 0; height: 100%; background: #0b0e0c; overflow: hidden; }
+      #app { height: 100%; display: grid; place-items: center; }
+
+      #cubuk {
+        position: fixed; bottom: 14px; left: 50%; transform: translateX(-50%);
+        display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 10px;
+        max-width: 95vw; padding: 8px 14px;
+        background: rgba(0, 0, 0, 0.55); border-radius: 12px;
+      }
+      .ayrac { width: 1px; height: 24px; background: #4a5550; }
+
+      .renk {
+        width: 28px; height: 28px; border-radius: 50%;
+        border: 2px solid transparent; cursor: pointer;
+      }
+      .renk.secili { border-color: #fff; }
+
+      .dugme {
+        padding: 6px 12px; cursor: pointer; border: 0; border-radius: 8px;
+        background: #3a4440; color: #fff; font: 14px sans-serif;
+      }
+      .dugme.secili { background: #5f7a6b; }
+      .dugme:disabled { opacity: 0.35; cursor: default; }
+    </style>
+  </head>
+  <body>
+    <div id="app"></div>
+
+    <div id="cubuk">
+      <button class="dugme" data-arac="kalem">Kalem</button>
+      <button class="dugme" data-arac="silgi">Silgi</button>
+      <span class="ayrac"></span>
+
+      <button class="renk" data-renk="ffffff"></button>
+      <button class="renk" data-renk="ffd54a"></button>
+      <button class="renk" data-renk="ff6b6b"></button>
+      <button class="renk" data-renk="6bd66b"></button>
+      <button class="renk" data-renk="5bc0ff"></button>
+      <button class="renk" data-renk="f48fb1"></button>
+      <span class="ayrac"></span>
+
+      <button class="dugme" data-kalinlik="3">İnce</button>
+      <button class="dugme" data-kalinlik="6">Orta</button>
+      <button class="dugme" data-kalinlik="12">Kalın</button>
+      <span class="ayrac"></span>
+
+      <button class="dugme" id="geri" title="Geri al (Ctrl+Z)">↶ Geri</button>
+      <button class="dugme" id="ileri" title="İleri al (Ctrl+Y)">↷ İleri</button>
+      <button class="dugme" id="tumunu-sil">Tümünü sil</button>
+    </div>
+
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
